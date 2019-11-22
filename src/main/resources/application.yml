@@ -1,0 +1,24 @@
+server:
+  port: 8000
+spring:
+  datasource:
+    #    url: jdbc:mysql:///bwsdb_basic
+    #    username: root
+    #    password: root
+    #    driver-class-name: com.mysql.jdbc.Driver
+    druid:
+      web-stat-filter:
+        enabled: true
+      stat-view-servlet:
+        enabled: true
+        login-username: admin
+        login-password: admin
+        allow: 127.0.0.1
+  application:
+    name: spring-cloud-eureka
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:${server.port}/eureka/
